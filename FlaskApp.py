@@ -55,6 +55,10 @@ def index():
             im_array = r.plot()  # plot a BGR numpy array of predictions
             im = Image.fromarray(im_array[..., ::-1])  # RGB PIL image
 
+            # create a temp directory if it does not exist
+            if not os.path.exists(APP_TEMP):
+                os.makedirs(APP_TEMP)
+                
             # save the image to a temporary file
             temp_file = f"static/temp/{current_image}"
             im.save(temp_file)
