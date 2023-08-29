@@ -58,7 +58,7 @@ def index():
             # create a temp directory if it does not exist
             if not os.path.exists(APP_TEMP):
                 os.makedirs(APP_TEMP)
-                
+
             # save the image to a temporary file
             temp_file = f"static/temp/{current_image}"
             im.save(temp_file)
@@ -95,7 +95,7 @@ def uploadAction():
 
 # run the app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
 
 # add close app when the server is stopped
 
