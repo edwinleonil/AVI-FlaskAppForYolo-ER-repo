@@ -28,6 +28,12 @@ files = glob.glob(APP_TEMP + '/*')
 for f in files:
     os.remove(f)
 
+# delete all files in the images folder
+files = glob.glob(APP_IMAGES + '/*')
+for f in files:
+    os.remove(f)
+
+
 # define the path to the template folder
 APP_TEMPLATES = os.path.join(APP_STATIC, 'templates')
 
@@ -97,6 +103,5 @@ def uploadAction():
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
 
-# add close app when the server is stopped
 
 
